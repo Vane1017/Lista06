@@ -4,26 +4,32 @@ using namespace std;
 
 int Fibonacci(int n){
 
-    int Soma;
+    int ii;
+
+    int ValorAnterior_2, ValorAnterior_1, ValorAtual;
+
+    ValorAnterior_1 = 1;
+    ValorAnterior_2 = 0;
 
     if(n==0){
         return 0;
     }
 
-    else if(n==1){
-        return 1;
+    for(ii=1; ii<n; ii++){
+        ValorAtual = ValorAnterior_1 + ValorAnterior_2;
+
+        ValorAnterior_2 = ValorAnterior_1;
+
+        ValorAnterior_1 = ValorAtual;
+
     }
 
-    else{
-        Soma = Fibonacci(n-1) + Fibonacci(n-2);
-
-        return Soma;
-    }
+    return ValorAtual;
 }
 
 int main(){
 
-    cout << "Lista 06 - Questao 01 - Letra a" << endl;
+    cout << "Lista 06 - Questao 01 - Letra c" << endl;
 
     cout << "Insira a posicao que deseja saber" << endl;
 
